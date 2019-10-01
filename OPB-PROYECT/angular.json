@@ -246,6 +246,46 @@
           }
         }
       }
+    },
+    "obp-common": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/obp-common",
+      "sourceRoot": "projects/obp-common/src",
+      "prefix": "obp-common",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/obp-common/tsconfig.lib.json",
+            "project": "projects/obp-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/obp-common/src/test.ts",
+            "tsConfig": "projects/obp-common/tsconfig.spec.json",
+            "karmaConfig": "projects/obp-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/obp-common/tsconfig.lib.json",
+              "projects/obp-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "home"
 }
