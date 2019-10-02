@@ -24,6 +24,12 @@
       ],
       "obp-common/*": [
         "dist/obp-common/*"
+      ],
+      "obp-material": [
+        "dist/obp-material"
+      ],
+      "obp-material/*": [
+        "dist/obp-material/*"
       ]
     }
   },

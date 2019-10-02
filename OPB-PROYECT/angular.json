@@ -28,6 +28,7 @@
               "projects/home/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/home/src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "projects/home/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/home/src/styles.scss"
             ],
             "scripts": []
@@ -150,6 +152,7 @@
               "projects/perfil/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/perfil/src/styles.scss"
             ],
             "scripts": []
@@ -215,6 +218,7 @@
               "projects/perfil/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/perfil/src/styles.scss"
             ],
             "scripts": []
@@ -286,6 +290,47 @@
           }
         }
       }
-    }},
+    },
+    "obp-material": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/obp-material",
+      "sourceRoot": "projects/obp-material/src",
+      "prefix": "obp-material",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/obp-material/tsconfig.lib.json",
+            "project": "projects/obp-material/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/obp-material/src/test.ts",
+            "tsConfig": "projects/obp-material/tsconfig.spec.json",
+            "karmaConfig": "projects/obp-material/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/obp-material/tsconfig.lib.json",
+              "projects/obp-material/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "home"
 }
